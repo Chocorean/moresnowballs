@@ -1,0 +1,7 @@
+# Items
+item.fire_snowball.name=Fire Snowball
+item.flint_snowball.name=Flint Snowball
+item.poison_snowball.name=Poison Snowball
+
+# Creative tabs
+itemGroup.moresnowballs=More Snowballs
