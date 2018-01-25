@@ -1,9 +1,11 @@
 package com.moresnowballs.moresnowballsmod;
 
 import com.moresnowballs.moresnowballsmod.creativetab.MoreSnowballsTab;
+import com.moresnowballs.moresnowballsmod.entity.EntityFireSnowball;
 import com.moresnowballs.moresnowballsmod.proxy.CommonProxy;
 import com.moresnowballs.moresnowballsmod.registry.ModItems;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -38,6 +40,7 @@ public class MoreSnowballsMod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
         LOGGER.info("Pre-initializing More Snowballs mod...");
+        int modEntityID=0;
         proxy.preInit(event);
     }
     @EventHandler

@@ -1,6 +1,7 @@
 package com.moresnowballs.moresnowballsmod.item;
 
 import com.moresnowballs.moresnowballsmod.entity.EntityFireSnowball;
+import com.moresnowballs.moresnowballsmod.entity.EntityWitherSnowball;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -11,8 +12,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemFireSnowball extends SnowballBase {
-    public ItemFireSnowball(String name){
+public class ItemWitherSnowball extends SnowballBase {
+    public ItemWitherSnowball(String name){
         super(name);
     }
 
@@ -32,7 +33,7 @@ public class ItemFireSnowball extends SnowballBase {
 
         if (!worldIn.isRemote)
         {
-            EntityFireSnowball entitysnowball = new EntityFireSnowball(worldIn, playerIn);
+            EntityWitherSnowball entitysnowball = new EntityWitherSnowball(worldIn, playerIn);
             entitysnowball.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
             worldIn.spawnEntity(entitysnowball);
         }

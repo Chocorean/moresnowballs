@@ -1,5 +1,6 @@
 package com.moresnowballs.moresnowballsmod.entity;
 
+import com.moresnowballs.moresnowballsmod.MoreSnowballsMod;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySnowball;
@@ -31,17 +32,19 @@ public class EntityFlintSnowball extends EntitySnowball {
     }
 
     /**
-     * Handler for {@link World#setEntityState}
+     *
+import net.minecraftforge.fml.common.registry.EntityRegistry;Handler for {@link World#setEntityState}
      */
     @SideOnly(Side.CLIENT)
     public void handleStatusUpdate(byte id)
     {
+        MoreSnowballsMod.LOGGER.info("handleStatusUpdate(id) : id = " + id);
         if (id == 3)
         {
             for (int i = 0; i < 8; ++i)
             {
-                this.world.spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
-                this.world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+                //this.world.spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+                this.world.spawnParticle(EnumParticleTypes.SPELL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
             }
         }
     }
@@ -57,7 +60,7 @@ public class EntityFlintSnowball extends EntitySnowball {
 
             if (result.entityHit instanceof EntityPlayer)
             {
-                i=1;
+                i=2;
             }
 
             result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);

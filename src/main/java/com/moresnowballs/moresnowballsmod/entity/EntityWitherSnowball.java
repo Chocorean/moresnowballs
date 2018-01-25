@@ -4,6 +4,10 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.potion.PotionHealthBoost;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.datafix.DataFixer;
@@ -12,26 +16,26 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityFireSnowball extends EntitySnowball {
+public class EntityWitherSnowball extends EntitySnowball {
 
-    public EntityFireSnowball(World worldIn)
+    public EntityWitherSnowball(World worldIn)
     {
         super(worldIn);
     }
 
-    public EntityFireSnowball(World worldIn, EntityLivingBase throwerIn)
+    public EntityWitherSnowball(World worldIn, EntityLivingBase throwerIn)
     {
         super(worldIn, throwerIn);
     }
 
-    public EntityFireSnowball(World worldIn, double x, double y, double z)
+    public EntityWitherSnowball(World worldIn, double x, double y, double z)
     {
         super(worldIn, x, y, z);
     }
 
     public static void registerFixesSnowball(DataFixer fixer)
     {
-        EntityThrowable.registerFixesThrowable(fixer, "FireSnowball");
+        EntityThrowable.registerFixesThrowable(fixer, "WitherSnowball");
     }
 
     /**
@@ -63,7 +67,7 @@ public class EntityFireSnowball extends EntitySnowball {
 
             if (result.entityHit instanceof EntityPlayer)
             {
-                result.entityHit.setFire(3);
+                ((EntityPlayer) result.entityHit).addPotionEffect(new PotionEffect(MobEffects.WITHER,60));
             }
 
             result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);

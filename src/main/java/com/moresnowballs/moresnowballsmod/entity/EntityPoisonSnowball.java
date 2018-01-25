@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.init.MobEffects;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.potion.PotionHealthBoost;
@@ -59,16 +60,11 @@ public class EntityPoisonSnowball extends EntitySnowball {
     {
         if (result.entityHit != null)
         {
-            int i = 0;
-
             if (result.entityHit instanceof EntityPlayer)
             {
-                Potion pot = new PotionHealthBoost(true, 2);
-
-                ((EntityPlayer) result.entityHit).addPotionEffect(new PotionEffect(pot,3));
+                PotionEffect eff = new PotionEffect(MobEffects.POISON,60);
+                ((EntityPlayer) result.entityHit).addPotionEffect(eff);
             }
-
-            result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
         }
 
         if (!this.world.isRemote)
