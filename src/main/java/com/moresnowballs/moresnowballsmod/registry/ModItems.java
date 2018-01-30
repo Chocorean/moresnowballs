@@ -9,10 +9,10 @@ import static com.moresnowballs.moresnowballsmod.MoreSnowballsMod.creativeTab;
 public class ModItems {
 
     public static SnowballBase fire_snowball = (ItemFireSnowball)new ItemFireSnowball("fire_snowball").setCreativeTab(creativeTab);
-    private static SnowballBase flint_snowball = (ItemFlintSnowball)new ItemFlintSnowball("flint_snowball").setCreativeTab(creativeTab);
-    private static SnowballBase poison_snowball = (ItemPoisonSnowball)new ItemPoisonSnowball("poison_snowball").setCreativeTab(creativeTab);
-    private static SnowballBase wither_snowball = (ItemWitherSnowball)new ItemWitherSnowball("wither_snowball").setCreativeTab(creativeTab);
-    private static SnowballBase tnt_snowball = (ItemTNTSnowball)new ItemTNTSnowball("tnt_snowball").setCreativeTab(creativeTab);
+    public static SnowballBase flint_snowball = (ItemFlintSnowball)new ItemFlintSnowball("flint_snowball").setCreativeTab(creativeTab);
+    public static SnowballBase poison_snowball = (ItemPoisonSnowball)new ItemPoisonSnowball("poison_snowball").setCreativeTab(creativeTab);
+    public static SnowballBase wither_snowball = (ItemWitherSnowball)new ItemWitherSnowball("wither_snowball").setCreativeTab(creativeTab);
+    public static SnowballBase tnt_snowball = (ItemTNTSnowball)new ItemTNTSnowball("tnt_snowball").setCreativeTab(creativeTab);
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
