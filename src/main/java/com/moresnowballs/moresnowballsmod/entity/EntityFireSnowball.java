@@ -2,7 +2,6 @@ package com.moresnowballs.moresnowballsmod.entity;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
@@ -12,8 +11,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class EntityFireSnowball extends EntitySnowball {
-
+public class EntityFireSnowball extends EntityThrowable {
     public EntityFireSnowball(World worldIn)
     {
         super(worldIn);
@@ -38,7 +36,6 @@ public class EntityFireSnowball extends EntitySnowball {
      * Handler for {@link World#setEntityState}
      */
     @SideOnly(Side.CLIENT)
-    @Override
     public void handleStatusUpdate(byte id)
     {
         if (id == 3)
