@@ -55,12 +55,10 @@ import net.minecraftforge.fml.common.registry.EntityRegistry.Handler for {@link 
         if (result.entityHit != null)
         {
             int i = 0;
-
             if (result.entityHit instanceof EntityPlayer)
             {
                 i=2;
             }
-
             result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
         }
 

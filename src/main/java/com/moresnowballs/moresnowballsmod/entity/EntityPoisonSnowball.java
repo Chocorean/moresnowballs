@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.RayTraceResult;
@@ -52,19 +53,21 @@ public class EntityPoisonSnowball extends EntityThrowable {
     /**
      * Called when this EntityThrowable hits a block or entity.
      */
+    @Override
     protected void onImpact(RayTraceResult result)
     {
-        if (result.entityHit != null)
-        {
-            if (result.entityHit instanceof EntityPlayer)
-            {
-                PotionEffect eff = new PotionEffect(MobEffects.POISON,60);
-                ((EntityPlayer) result.entityHit).addPotionEffect(eff);
-            }
-        }
-
         if (!this.world.isRemote)
         {
+            if (result.entityHit != null)
+            {
+                if (result.entityHit instanceof EntityPlayer)
+                {
+                    PotionEffect eff = new PotionEffect(MobEffects.POISON,60);
+                    ((EntityPlayer) result.entityHit).addPotionEffect(eff);
+                    result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 0.0F);
+
+                }
+            }
             this.world.setEntityState(this, (byte)3);
             this.setDead();
         }

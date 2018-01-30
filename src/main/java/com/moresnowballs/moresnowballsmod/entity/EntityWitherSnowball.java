@@ -1,5 +1,6 @@
 package com.moresnowballs.moresnowballsmod.entity;
 
+import com.moresnowballs.moresnowballsmod.MoreSnowballsMod;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
@@ -58,20 +59,16 @@ public class EntityWitherSnowball extends EntityThrowable {
     @Override
     protected void onImpact(RayTraceResult result)
     {
-        if (result.entityHit != null)
-        {
-            int i = 0;
-
-            if (result.entityHit instanceof EntityPlayer)
-            {
-                ((EntityPlayer) result.entityHit).addPotionEffect(new PotionEffect(MobEffects.WITHER,60));
-            }
-
-            result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
-        }
-
         if (!this.world.isRemote)
         {
+            if (result.entityHit != null)
+            {
+                if (result.entityHit instanceof EntityPlayer)
+                {
+                    ((EntityPlayer) result.entityHit).addPotionEffect(new PotionEffect(MobEffects.WITHER,60));
+                    result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), 0.0F);
+                }
+            }
             this.world.setEntityState(this, (byte)3);
             this.setDead();
         }

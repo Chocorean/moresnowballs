@@ -52,6 +52,7 @@ public class EntityTNTSnowball extends EntityThrowable {
     /**
      * Called when this EntityThrowable hits a block or entity.
      */
+    @Override
     protected void onImpact(RayTraceResult result)
     {
         if (!this.world.isRemote)
