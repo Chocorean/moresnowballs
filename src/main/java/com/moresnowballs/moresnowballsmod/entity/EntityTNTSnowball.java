@@ -1,11 +1,13 @@
 package com.moresnowballs.moresnowballsmod.entity;
 
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -52,16 +54,13 @@ public class EntityTNTSnowball extends EntityThrowable {
      */
     protected void onImpact(RayTraceResult result)
     {
-        if (result.entityHit != null)
-        {
-            if (result.entityHit instanceof EntityPlayer)
-            {
-                this.world.createExplosion(this, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 2.5F, true);
-            }
-        }
-
         if (!this.world.isRemote)
         {
+            Explosion explosionIn = new Explosion(this.world,this.thrower,this.posX,this.posY,this.posZ,1.5F,false,true);
+            EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(this.world, (double)((float)this.posX + 0.5F), this.posY, (double)((float)this.posZ + 0.5F), explosionIn.getExplosivePlacedBy());
+            entitytntprimed.setFuse((short)(this.world.rand.nextInt(entitytntprimed.getFuse() / 4) + entitytntprimed.getFuse() / 8));
+            this.world.createExplosion(entitytntprimed, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 4.0F, true);
+
             this.world.setEntityState(this, (byte)3);
             this.setDead();
         }
