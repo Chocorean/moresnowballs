@@ -79,9 +79,9 @@ public class MoreSnowballsMod {
         ResourceLocation witherball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
         // registering
         EntityRegistry.registerModEntity(flintball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
-        EntityRegistry.registerModEntity(fireball, EntityFireSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
-        EntityRegistry.registerModEntity(poisonball, EntityPoisonSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
-        EntityRegistry.registerModEntity(tntball, EntityTNTSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
-        EntityRegistry.registerModEntity(witherball, EntityWitherSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(fireball, EntityFireSnowball.class, "fire_snowball", 2, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(poisonball, EntityPoisonSnowball.class, "poison_snowball", 3, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(tntball, EntityTNTSnowball.class, "tnt_snowball", 4, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(witherball, EntityWitherSnowball.class, "wither_snowball", 5, MoreSnowballsMod.MODID, 64, 10, true);
     }
 }
