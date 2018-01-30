@@ -1,10 +1,9 @@
 package com.moresnowballs.moresnowballsmod.proxy;
 
 import com.moresnowballs.moresnowballsmod.MoreSnowballsMod;
-import com.moresnowballs.moresnowballsmod.entity.EntityFireSnowball;
-import com.moresnowballs.moresnowballsmod.entity.EntityFlintSnowball;
+import com.moresnowballs.moresnowballsmod.entity.*;
 import com.moresnowballs.moresnowballsmod.registry.ModItems;
-import com.moresnowballs.moresnowballsmod.renderer.RenderFlintSnowball;
+import com.moresnowballs.moresnowballsmod.renderer.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.entity.Render;
@@ -20,6 +19,10 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent event){
         super.preInit(event);
         RenderingRegistry.registerEntityRenderingHandler(EntityFlintSnowball.class, (RenderManager renderManagerIn) -> new RenderFlintSnowball(renderManagerIn));
+        RenderingRegistry.registerEntityRenderingHandler(EntityFireSnowball.class, (RenderManager renderManagerIn) -> new RenderFireSnowball(renderManagerIn));
+        RenderingRegistry.registerEntityRenderingHandler(EntityPoisonSnowball.class, (RenderManager renderManagerIn) -> new RenderPoisonSnowball(renderManagerIn));
+        RenderingRegistry.registerEntityRenderingHandler(EntityTNTSnowball.class, (RenderManager renderManagerIn) -> new RenderTNTSnowball(renderManagerIn));
+        RenderingRegistry.registerEntityRenderingHandler(EntityWitherSnowball.class, (RenderManager renderManagerIn) -> new RenderWitherSnowball(renderManagerIn));
     }
     @Override
     public void init(FMLInitializationEvent event){
