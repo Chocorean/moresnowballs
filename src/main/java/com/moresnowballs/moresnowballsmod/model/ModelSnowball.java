@@ -11,10 +11,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
-public class ModelFlintSnowball extends ModelBase {
+public class ModelSnowball extends ModelBase {
     private ModelRenderer renderer;
 
-    public ModelFlintSnowball() {
+    public ModelSnowball() {
         this.textureWidth = 16;
         this.textureHeight = 16;
 

@@ -1,7 +1,7 @@
 package com.moresnowballs.moresnowballsmod.renderer;
 
 import com.moresnowballs.moresnowballsmod.MoreSnowballsMod;
-import com.moresnowballs.moresnowballsmod.entity.EntityFlintSnowball;
+import com.moresnowballs.moresnowballsmod.entity.EntityWitherSnowball;
 import com.moresnowballs.moresnowballsmod.model.ModelSnowball;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
@@ -10,15 +10,15 @@ import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
 
-public class RenderFlintSnowball extends Render<EntityFlintSnowball> {
+public class RenderWitherSnowball extends Render<EntityWitherSnowball> {
     private final ModelSnowball model = new ModelSnowball();
 
-    public RenderFlintSnowball(RenderManager renderManagerIn) {
-            super(renderManagerIn);
+    public RenderWitherSnowball(RenderManager renderManagerIn) {
+        super(renderManagerIn);
     }
 
     @Override
-    public void doRender(EntityFlintSnowball entity, double x, double y, double z, float entityYaw, float partialTicks) {
+    public void doRender(EntityWitherSnowball entity, double x, double y, double z, float entityYaw, float partialTicks) {
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)x,(float)y,(float)z);
         GlStateManager.enableRescaleNormal();
@@ -35,7 +35,7 @@ public class RenderFlintSnowball extends Render<EntityFlintSnowball> {
 
     @Nullable
     @Override
-    protected ResourceLocation getEntityTexture(EntityFlintSnowball entity) {
-        return new ResourceLocation(MoreSnowballsMod.MODID,"textures/items/flint_snowball.png");
+    protected ResourceLocation getEntityTexture(EntityWitherSnowball entity) {
+        return new ResourceLocation(MoreSnowballsMod.MODID,"textures/items/wither_snowball.png");
     }
 }
