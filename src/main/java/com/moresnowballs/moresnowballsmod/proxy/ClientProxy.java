@@ -2,7 +2,9 @@ package com.moresnowballs.moresnowballsmod.proxy;
 
 import com.moresnowballs.moresnowballsmod.MoreSnowballsMod;
 import com.moresnowballs.moresnowballsmod.entity.EntityFireSnowball;
+import com.moresnowballs.moresnowballsmod.entity.EntityFlintSnowball;
 import com.moresnowballs.moresnowballsmod.registry.ModItems;
+import com.moresnowballs.moresnowballsmod.renderer.RenderFlintSnowball;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.entity.Render;
@@ -17,7 +19,8 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event){
         super.preInit(event);
-            }
+        RenderingRegistry.registerEntityRenderingHandler(EntityFlintSnowball.class, (RenderManager renderManagerIn) -> new RenderFlintSnowball(renderManagerIn));
+    }
     @Override
     public void init(FMLInitializationEvent event){
         super.init(event);
