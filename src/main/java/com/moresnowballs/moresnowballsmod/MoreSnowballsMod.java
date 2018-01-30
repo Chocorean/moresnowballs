@@ -1,7 +1,7 @@
 package com.moresnowballs.moresnowballsmod;
 
 import com.moresnowballs.moresnowballsmod.creativetab.MoreSnowballsTab;
-import com.moresnowballs.moresnowballsmod.entity.EntityFlintSnowball;
+import com.moresnowballs.moresnowballsmod.entity.*;
 import com.moresnowballs.moresnowballsmod.proxy.CommonProxy;
 import com.moresnowballs.moresnowballsmod.registry.ModItems;
 import net.minecraft.item.Item;
@@ -79,9 +79,9 @@ public class MoreSnowballsMod {
         ResourceLocation witherball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
         // registering
         EntityRegistry.registerModEntity(flintball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
-        EntityRegistry.registerModEntity(fireball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
-        EntityRegistry.registerModEntity(poisonball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
-        EntityRegistry.registerModEntity(tntball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
-        EntityRegistry.registerModEntity(witherball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(fireball, EntityFireSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(poisonball, EntityPoisonSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(tntball, EntityTNTSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(witherball, EntityWitherSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
     }
 }
