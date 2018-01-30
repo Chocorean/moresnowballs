@@ -56,10 +56,10 @@ public class EntityTNTSnowball extends EntityThrowable {
     {
         if (!this.world.isRemote)
         {
-            Explosion explosionIn = new Explosion(this.world,this.thrower,this.posX,this.posY,this.posZ,1.5F,false,true);
+            Explosion explosionIn = new Explosion(this.world,this.thrower,this.posX,this.posY,this.posZ,0.5F,false,true);
             EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(this.world, (double)((float)this.posX + 0.5F), this.posY, (double)((float)this.posZ + 0.5F), explosionIn.getExplosivePlacedBy());
             entitytntprimed.setFuse((short)(this.world.rand.nextInt(entitytntprimed.getFuse() / 4) + entitytntprimed.getFuse() / 8));
-            this.world.createExplosion(entitytntprimed, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 4.0F, true);
+            this.world.createExplosion(entitytntprimed, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 1.0F, true);
 
             this.world.setEntityState(this, (byte)3);
             this.setDead();
