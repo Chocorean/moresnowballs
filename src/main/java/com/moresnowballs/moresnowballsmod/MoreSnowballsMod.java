@@ -1,13 +1,14 @@
 package com.moresnowballs.moresnowballsmod;
 
 import com.moresnowballs.moresnowballsmod.creativetab.MoreSnowballsTab;
-import com.moresnowballs.moresnowballsmod.entity.EntityFireSnowball;
+import com.moresnowballs.moresnowballsmod.entity.EntityFlintSnowball;
 import com.moresnowballs.moresnowballsmod.proxy.CommonProxy;
 import com.moresnowballs.moresnowballsmod.registry.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 import java.util.logging.Logger;
 
@@ -24,7 +26,7 @@ public class MoreSnowballsMod {
     public static final String NAME = "More Snowballs";
     public static final String VERSION = "1.0";
     public static final String CLIENT_PROXY = "com.moresnowballs.moresnowballsmod.proxy.ClientProxy";
-    public static final String COMMON_PROXY = "com.moresnowballs.moresnowballsmod.proxy.CommonProxy";
+    public static final String COMMON_PROXY = "com.moresnowballs.moresnowballsmod.proxy.ServerProxy";
 
     @SidedProxy(clientSide=MoreSnowballsMod.CLIENT_PROXY,serverSide = MoreSnowballsMod.COMMON_PROXY)
     public static CommonProxy proxy;
@@ -40,7 +42,7 @@ public class MoreSnowballsMod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
         LOGGER.info("Pre-initializing More Snowballs mod...");
-        int modEntityID=0;
+        register();
         proxy.preInit(event);
     }
     @EventHandler
@@ -66,5 +68,10 @@ public class MoreSnowballsMod {
         public static void registerItems(ModelRegistryEvent event) {
             ModItems.registerModels();
         }
+    }
+
+    private static void register(){
+        ResourceLocation flintball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
+        EntityRegistry.registerModEntity(flintball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
     }
 }
