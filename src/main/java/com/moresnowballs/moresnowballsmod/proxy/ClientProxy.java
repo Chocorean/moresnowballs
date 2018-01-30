@@ -23,6 +23,7 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityPoisonSnowball.class, (RenderManager renderManagerIn) -> new RenderPoisonSnowball(renderManagerIn));
         RenderingRegistry.registerEntityRenderingHandler(EntityTNTSnowball.class, (RenderManager renderManagerIn) -> new RenderTNTSnowball(renderManagerIn));
         RenderingRegistry.registerEntityRenderingHandler(EntityWitherSnowball.class, (RenderManager renderManagerIn) -> new RenderWitherSnowball(renderManagerIn));
+        RenderingRegistry.registerEntityRenderingHandler(EntityGumSnowball.class, (RenderManager renderManagerIn) -> new RenderGumSnowball(renderManagerIn));
     }
     @Override
     public void init(FMLInitializationEvent event){

@@ -18,6 +18,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
+import javax.annotation.Resource;
 import java.util.logging.Logger;
 
 @Mod(modid = MoreSnowballsMod.MODID, name = MoreSnowballsMod.NAME, version = MoreSnowballsMod.VERSION)
@@ -77,11 +78,13 @@ public class MoreSnowballsMod {
         ResourceLocation poisonball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
         ResourceLocation tntball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
         ResourceLocation witherball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
+        ResourceLocation gumball = new ResourceLocation(MoreSnowballsMod.MODID,"inventory");
         // registering
         EntityRegistry.registerModEntity(flintball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
         EntityRegistry.registerModEntity(fireball, EntityFireSnowball.class, "fire_snowball", 2, MoreSnowballsMod.MODID, 64, 10, true);
         EntityRegistry.registerModEntity(poisonball, EntityPoisonSnowball.class, "poison_snowball", 3, MoreSnowballsMod.MODID, 64, 10, true);
         EntityRegistry.registerModEntity(tntball, EntityTNTSnowball.class, "tnt_snowball", 4, MoreSnowballsMod.MODID, 64, 10, true);
         EntityRegistry.registerModEntity(witherball, EntityWitherSnowball.class, "wither_snowball", 5, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(gumball, EntityGumSnowball.class, "gum_snowball", 6, MoreSnowballsMod.MODID, 64, 10, true);
     }
 }
