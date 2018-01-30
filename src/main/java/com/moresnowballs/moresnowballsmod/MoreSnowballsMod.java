@@ -42,7 +42,7 @@ public class MoreSnowballsMod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event){
         LOGGER.info("Pre-initializing More Snowballs mod...");
-        register();
+        registerEntities();
         proxy.preInit(event);
     }
     @EventHandler
@@ -70,7 +70,7 @@ public class MoreSnowballsMod {
         }
     }
 
-    private static void register(){
+    private static void registerEntities(){
         ResourceLocation flintball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
         EntityRegistry.registerModEntity(flintball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
     }
