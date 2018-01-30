@@ -41,6 +41,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry.Handler for {@link 
             for (int i = 0; i < 8; ++i)
             {
                 this.world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+                this.world.spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
             }
         }
     }

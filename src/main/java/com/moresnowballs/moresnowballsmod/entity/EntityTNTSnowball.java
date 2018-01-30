@@ -46,7 +46,7 @@ public class EntityTNTSnowball extends EntitySnowball {
             for (int i = 0; i < 8; ++i)
             {
                 this.world.spawnParticle(EnumParticleTypes.SNOWBALL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
-                this.world.spawnParticle(EnumParticleTypes.SPELL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+                this.world.spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
             }
         }
     }
@@ -60,7 +60,7 @@ public class EntityTNTSnowball extends EntitySnowball {
         {
             if (result.entityHit instanceof EntityPlayer)
             {
-                this.world.createExplosion(this, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 1.5F, true);
+                this.world.createExplosion(this, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 2.5F, true);
             }
         }
 
