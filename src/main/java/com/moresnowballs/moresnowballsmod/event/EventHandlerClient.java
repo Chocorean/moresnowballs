@@ -22,11 +22,13 @@ public class EventHandlerClient {
             if (!world.isRemote) {
                 // creating new entity
                 EntityLivingBase thrower = ((EntitySnowball) entity).getThrower();
-                EntityCustomSnowball entitysnowball = new EntityCustomSnowball(world, thrower);
-                entitysnowball.shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0.0F, 1.5F, 1.0F);
-                world.spawnEntity(entitysnowball);
+                if (thrower != null) {
+                    EntityCustomSnowball entitysnowball = new EntityCustomSnowball(world, thrower);
+                    entitysnowball.shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0.0F, 1.5F, 1.0F);
+                    world.spawnEntity(entitysnowball);
+                    event.setCanceled(true);
+                }
             }
-            event.setCanceled(true);
         }
     }
 }

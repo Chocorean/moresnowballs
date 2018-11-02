@@ -20,14 +20,15 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event){
         super.preInit(event);
-        RenderingRegistry.registerEntityRenderingHandler(EntityFlintSnowball.class, (RenderManager renderManagerIn) -> new RenderFlintSnowball(renderManagerIn));
-        RenderingRegistry.registerEntityRenderingHandler(EntityFireSnowball.class, (RenderManager renderManagerIn) -> new RenderFireSnowball(renderManagerIn));
-        RenderingRegistry.registerEntityRenderingHandler(EntityPoisonSnowball.class, (RenderManager renderManagerIn) -> new RenderPoisonSnowball(renderManagerIn));
-        RenderingRegistry.registerEntityRenderingHandler(EntityTNTSnowball.class, (RenderManager renderManagerIn) -> new RenderTNTSnowball(renderManagerIn));
-        RenderingRegistry.registerEntityRenderingHandler(EntityWitherSnowball.class, (RenderManager renderManagerIn) -> new RenderWitherSnowball(renderManagerIn));
-        RenderingRegistry.registerEntityRenderingHandler(EntityGumSnowball.class, (RenderManager renderManagerIn) -> new RenderGumSnowball(renderManagerIn));
-        RenderingRegistry.registerEntityRenderingHandler(EntityCustomSnowball.class, (RenderManager renderManagerIn) -> new RenderCustomSnowball(renderManagerIn));
-        RenderingRegistry.registerEntityRenderingHandler(EntityZombieSnowball.class, (RenderManager renderManagerIn) -> new RenderZombieSnowball(renderManagerIn));
+        MoreSnowballsMod.LOGGER.info("Registering Entity Rendering handlers");
+        RenderingRegistry.registerEntityRenderingHandler(EntityFlintSnowball.class, RenderFlintSnowball::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityFireSnowball.class, RenderFireSnowball::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityPoisonSnowball.class, RenderPoisonSnowball::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityTNTSnowball.class, RenderTNTSnowball::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityWitherSnowball.class, RenderWitherSnowball::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityGumSnowball.class, RenderGumSnowball::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityCustomSnowball.class, RenderCustomSnowball::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityZombieSnowball.class, RenderZombieSnowball::new);
     }
     @Override
     public void init(FMLInitializationEvent event) {

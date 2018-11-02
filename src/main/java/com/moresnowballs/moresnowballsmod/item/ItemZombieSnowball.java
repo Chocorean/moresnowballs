@@ -14,7 +14,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemZombieSnowball extends SnowballBase {
-    @SideOnly(Side.CLIENT)
     public ItemZombieSnowball(String name){
         super(name);
     }
