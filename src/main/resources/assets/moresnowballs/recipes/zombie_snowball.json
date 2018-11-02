@@ -11,12 +11,12 @@
       "data": 0
     },
     "P": {
-      "item": "minecraft:fermented_spider_eye",
+      "item": "minecraft:skull",
       "data": 0
     }
   },
   "result": {
-    "item": "moresnowballs:poison_snowball",
+    "item": "moresnowballs:zombie_snowball",
     "count": 32,
     "data": 0
   }

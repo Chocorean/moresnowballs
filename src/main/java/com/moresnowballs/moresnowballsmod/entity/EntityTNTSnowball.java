@@ -30,7 +30,7 @@ public class EntityTNTSnowball extends EntityThrowable {
 
     public static void registerFixesSnowball(DataFixer fixer)
     {
-        EntityThrowable.registerFixesThrowable(fixer, "PoisonSnowball");
+        EntityThrowable.registerFixesThrowable(fixer, "TNTSnowball");
     }
 
     /**
