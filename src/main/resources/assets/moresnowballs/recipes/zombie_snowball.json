@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SPS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:snowball",
+      "data": 0
+    },
+    "P": {
+      "item": "minecraft:fermented_spider_eye",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "moresnowballs:poison_snowball",
+    "count": 32,
+    "data": 0
+  }
+}
