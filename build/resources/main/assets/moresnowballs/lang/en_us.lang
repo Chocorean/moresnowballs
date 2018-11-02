@@ -1,0 +1,11 @@
+# Items
+item.fire_snowball.name=Fire Snowball
+item.flint_snowball.name=Flint Snowball
+item.poison_snowball.name=Poison Snowball
+item.tnt_snowball.name=TNT Snowball
+item.wither_snowball.name=Wither Snowball
+item.gum_snowball.name=Gum Snowball
+item.zombie_snowball.name=Zombie Snowball
+
+# Creative tabs
+itemGroup.moresnowballs=More Snowballs
