@@ -2,6 +2,7 @@ package com.moresnowballs.moresnowballsmod.proxy;
 
 import com.moresnowballs.moresnowballsmod.MoreSnowballsMod;
 import com.moresnowballs.moresnowballsmod.entity.*;
+import com.moresnowballs.moresnowballsmod.event.EventHandlerClient;
 import com.moresnowballs.moresnowballsmod.registry.ModItems;
 import com.moresnowballs.moresnowballsmod.renderer.*;
 import net.minecraft.client.Minecraft;
@@ -11,6 +12,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.*;
 
@@ -24,10 +26,12 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityTNTSnowball.class, (RenderManager renderManagerIn) -> new RenderTNTSnowball(renderManagerIn));
         RenderingRegistry.registerEntityRenderingHandler(EntityWitherSnowball.class, (RenderManager renderManagerIn) -> new RenderWitherSnowball(renderManagerIn));
         RenderingRegistry.registerEntityRenderingHandler(EntityGumSnowball.class, (RenderManager renderManagerIn) -> new RenderGumSnowball(renderManagerIn));
+        RenderingRegistry.registerEntityRenderingHandler(EntityCustomSnowball.class, (RenderManager renderManagerIn) -> new RenderCustomSnowball(renderManagerIn));
+        RenderingRegistry.registerEntityRenderingHandler(EntityZombieSnowball.class, (RenderManager renderManagerIn) -> new RenderZombieSnowball(renderManagerIn));
     }
     @Override
-    public void init(FMLInitializationEvent event){
-        super.init(event);
+    public void init(FMLInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(new EventHandlerClient());
     }
     @Override
     public void postInit(FMLPostInitializationEvent event){

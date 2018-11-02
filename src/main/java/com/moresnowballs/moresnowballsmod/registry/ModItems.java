@@ -14,6 +14,7 @@ public class ModItems {
     public static SnowballBase wither_snowball = (ItemWitherSnowball)new ItemWitherSnowball("wither_snowball").setCreativeTab(creativeTab);
     public static SnowballBase tnt_snowball = (ItemTNTSnowball)new ItemTNTSnowball("tnt_snowball").setCreativeTab(creativeTab);
     public static SnowballBase gum_snowball = (ItemGumSnowball)new ItemGumSnowball("gum_snowball").setCreativeTab(creativeTab);
+    public static SnowballBase zombie_snowball = (ItemZombieSnowball)new ItemZombieSnowball("zombie_snowball").setCreativeTab(creativeTab);
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
@@ -22,7 +23,8 @@ public class ModItems {
                 poison_snowball,
                 wither_snowball,
                 tnt_snowball,
-                gum_snowball
+                gum_snowball,
+                zombie_snowball
         );
     }
 
@@ -33,5 +35,6 @@ public class ModItems {
         wither_snowball.registerItemModel();
         tnt_snowball.registerItemModel();
         gum_snowball.registerItemModel();
+        zombie_snowball.registerItemModel();
     }
 }

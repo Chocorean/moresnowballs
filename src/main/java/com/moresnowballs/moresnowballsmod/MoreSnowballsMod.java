@@ -79,6 +79,8 @@ public class MoreSnowballsMod {
         ResourceLocation tntball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
         ResourceLocation witherball = new ResourceLocation(MoreSnowballsMod.MODID, "inventory");
         ResourceLocation gumball = new ResourceLocation(MoreSnowballsMod.MODID,"inventory");
+        ResourceLocation customball = new ResourceLocation(MoreSnowballsMod.MODID,"inventory");
+        ResourceLocation zombieball = new ResourceLocation(MoreSnowballsMod.MODID,"inventory");
         // registering
         EntityRegistry.registerModEntity(flintball, EntityFlintSnowball.class, "flint_snowball", 1, MoreSnowballsMod.MODID, 64, 10, true);
         EntityRegistry.registerModEntity(fireball, EntityFireSnowball.class, "fire_snowball", 2, MoreSnowballsMod.MODID, 64, 10, true);
@@ -86,5 +88,7 @@ public class MoreSnowballsMod {
         EntityRegistry.registerModEntity(tntball, EntityTNTSnowball.class, "tnt_snowball", 4, MoreSnowballsMod.MODID, 64, 10, true);
         EntityRegistry.registerModEntity(witherball, EntityWitherSnowball.class, "wither_snowball", 5, MoreSnowballsMod.MODID, 64, 10, true);
         EntityRegistry.registerModEntity(gumball, EntityGumSnowball.class, "gum_snowball", 6, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(customball, EntityCustomSnowball.class, "custom_snowball", 7, MoreSnowballsMod.MODID, 64, 10, true);
+        EntityRegistry.registerModEntity(zombieball, EntityZombieSnowball.class, "zombie_snowball", 8, MoreSnowballsMod.MODID, 64, 10, true);
     }
 }
