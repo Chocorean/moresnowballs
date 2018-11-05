@@ -5,6 +5,7 @@
 
 * The mod itself
 * Installation
+* Use
 * Issues
 * License
 * Contributors
@@ -28,6 +29,12 @@ This mod adds to Minecraft 8 new snowballs (including the classic one) which are
 * Download the mod and put it in your both client and server *mods/* folder.
 * Start your game !
 
+## Use
+
+* You are free to use this mod at your own purpose, and to share it. Please make sure to add a reference to the Curse project's page or to this repo.
+* You can use this mod in a modpack. Please make sure to add me in the list of contributors and/or to add a reference to the Curse project's page or to this repo.
+* You are free to modify the source code and redistribute the mod. If you do so, please make sure to add me in the list of contributors and/or to add a reference to he Curse project's page or to this repo.
+
 ## Issues
 
 If you encounter any difficulties using the mod, please let me know [here](https://github.com/Chocorean/moresnowballs/issues).
@@ -36,12 +43,10 @@ If you encounter any difficulties using the mod, please let me know [here](https
 
 This mod is under [GNU v3.0](https://www.gnu.org/licenses/gpl-3.0.fr.html) license.
 
-Nevertheless, this is what I allow anyone to do :
-* You are free to use this mod at your own purpose, and to share it. You can use this mod in a modpack.
-* You are free to modify the source code and redistribute the mod. If you do so, you have to make a reference to this repository and make me appear in your contributors list.
-
 ## Contributors
 
 Feel free to contact me if you have any idea that could be added or if you spot a bug. Your name would be added to this list if you do so!
 
-* [@Chocorean](https://github.com/Chocorean/) 
+* [@Chocorean](https://github.com/Chocorean/)
+* Farouk-Olivier C. (original idea)
+
